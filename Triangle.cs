@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,8 +42,14 @@ namespace AreaOfShapes
 
         public bool IsRightTriangle()
         {
-            return false;
+            return FormulaRightTriangle(_sides[0], _sides[1], _sides[2]) 
+                || FormulaRightTriangle(_sides[1], _sides[2], _sides[0])
+                || FormulaRightTriangle(_sides[2], _sides[0], _sides[1]);
         }
 
+        private bool FormulaRightTriangle(double a, double b, double c)
+        {
+            return Math.Pow(a, 2) + Math.Pow(b, 2) == Math.Pow(c, 2);
+        }
     }
 }
