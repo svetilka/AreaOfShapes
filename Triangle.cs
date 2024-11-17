@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using AreaOfShapes.Interface;
@@ -9,36 +10,39 @@ namespace AreaOfShapes
 {
     public class Triangle: IShape
     {
-        double _side1;
-        double _side2;
-        double _side3;
-        public Triangle(double side1, double side2, double side3)
+        IList<double> _sides;
+
+        public Triangle(IList<double> sides)
         {
-            if (side1 < 0)
-                throw new ArgumentOutOfRangeException("side1");
+            if (sides.Count != 3) throw new ArgumentOutOfRangeException($"Is not a triangle");
 
-            if (side2 < 0)
-                throw new ArgumentOutOfRangeException("side2");
+            foreach (var side in sides)
+            {
+                if (side < 0)
+                    throw new ArgumentOutOfRangeException($"side {side}");
+            }
 
-            if (side3 < 0)
-                throw new ArgumentOutOfRangeException("side3");
-
-            _side1 = side1;
-            _side2 = side2;
-            _side3 = side3;
+            _sides = sides;
         }
 
         private double Semiperimeter()
         {
-            var result =  1 / 2 * (_side1 + _side2 + _side3);
-            Console.WriteLine($"Semiperimeter = {result}");
+            var result = _sides.Sum() / 2;
+            Console.Write($"Semiperimeter = {result}");
             return result;
         }
 
         public double Area()
         {
             var semiperimeter = Semiperimeter();
-            return Math.Sqrt(semiperimeter * (semiperimeter - _side1) * (semiperimeter - _side2) * (semiperimeter - _side3));
+            return Math.Sqrt(semiperimeter * (semiperimeter - _sides[0]) 
+                * (semiperimeter - _sides[1]) * (semiperimeter - _sides[2]));
         }
+
+        public bool IsRightTriangle()
+        {
+            return false;
+        }
+
     }
 }
