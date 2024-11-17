@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace AreaOfShapes.Interface
 {
-    internal interface IAreaShape
+    internal interface IShape
     {
-        public double AreaOfShapes();
+       double Area();
     }
 }

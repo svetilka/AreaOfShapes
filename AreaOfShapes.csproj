@@ -44,8 +44,9 @@
     <Compile Include="Circle.cs" />
     <Compile Include="Triangle.cs" />
     <Compile Include="Enum\Shapes.cs" />
-    <Compile Include="Interface\IAreaShape.cs" />
+    <Compile Include="Interface\IShape.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

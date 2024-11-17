@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35506.116 d17.12
+VisualStudioVersion = 17.12.35506.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AreaOfShapes", "AreaOfShapes.csproj", "{5B31EE1C-D28C-4EA1-913F-C74F7C4401CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapesTests", "..\ShapesTests\ShapesTests.csproj", "{C52BE957-8D95-41D8-BD48-981BCB890CDD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{5B31EE1C-D28C-4EA1-913F-C74F7C4401CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B31EE1C-D28C-4EA1-913F-C74F7C4401CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B31EE1C-D28C-4EA1-913F-C74F7C4401CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C52BE957-8D95-41D8-BD48-981BCB890CDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C52BE957-8D95-41D8-BD48-981BCB890CDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C52BE957-8D95-41D8-BD48-981BCB890CDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C52BE957-8D95-41D8-BD48-981BCB890CDD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
